@@ -8,3 +8,4 @@ include/
 cache.db/
 
 *.png
+!casio.png

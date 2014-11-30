@@ -18,5 +18,5 @@ if __name__ == "__main__":
     plt.fill_between(f.index, f["Low"], f["High"], color="b", alpha=0.2)
 
     f["Close"].plot()
-    plt.savefig("./nikkei.png")
+    plt.savefig("./casio.png")
 
