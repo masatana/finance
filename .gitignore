@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+
+bin/
+man/
+lib/
+include/
+cache.db/
+
+*.png
