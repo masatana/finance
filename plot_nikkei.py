@@ -10,7 +10,7 @@ import numpy
 import jpmarket
 
 if __name__ == "__main__":
-    start = datetime(2014, 10, 1)
+    start = datetime(2014, 11, 1)
 
     f = jpmarket.dataReader(6952, "yahoojp", start)
     plt.title("{} from {} to {}".format(6952, start, datetime.today()))

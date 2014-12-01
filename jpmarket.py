@@ -28,6 +28,10 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+import jsm
+from pandas.core.datetools import to_datetime
+import numpy as np
+import pandas
 
 def dataReader(name, data_source=None, start=None, end=None,
         retry_count=3, pause=0.001):
@@ -67,7 +71,7 @@ def data2frame(data):
 
     props.append("Adj Close")
     frames.append([x._adj_close for x in data])
-    frames = numpy.vstack(frames).transpose()
+    frames = np.vstack(frames).transpose()
 
     dates = [x.date for x in data]
 
@@ -75,7 +79,6 @@ def data2frame(data):
     return frames
 
 def _sanitize_dates(start, end):
-    from pandas.core.datetools import to_datetime
     start = to_datetime(start)
     end = to_datetime(end)
     if start is None:
